@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alter.c" />
+    <ClCompile Include="analyze.c" />
+    <ClCompile Include="attach.c" />
+    <ClCompile Include="auth.c" />
+    <ClCompile Include="btree.c" />
+    <ClCompile Include="build.c" />
+    <ClCompile Include="callback.c" />
+    <ClCompile Include="complete.c" />
+    <ClCompile Include="date.c" />
+    <ClCompile Include="delete.c" />
+    <ClCompile Include="expr.c" />
+    <ClCompile Include="fts1.c" />
+    <ClCompile Include="fts1_hash.c" />
+    <ClCompile Include="fts1_porter.c" />
+    <ClCompile Include="fts1_tokenizer1.c" />
+    <ClCompile Include="func.c" />
+    <ClCompile Include="hash.c" />
+    <ClCompile Include="insert.c" />
+    <ClCompile Include="legacy.c" />
+    <ClCompile Include="loadext.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="opcodes.c" />
+    <ClCompile Include="os.c" />
+    <ClCompile Include="os_os2.c" />
+    <ClCompile Include="os_unix.c" />
+    <ClCompile Include="os_win.c" />
+    <ClCompile Include="pager.c" />
+    <ClCompile Include="parse.c" />
+    <ClCompile Include="pragma.c" />
+    <ClCompile Include="prepare.c" />
+    <ClCompile Include="printf.c" />
+    <ClCompile Include="random.c" />
+    <ClCompile Include="select.c" />
+    <ClCompile Include="shell.c" />
+    <ClCompile Include="table.c" />
+    <ClCompile Include="tclsqlite.c" />
+    <ClCompile Include="tokenize.c" />
+    <ClCompile Include="trigger.c" />
+    <ClCompile Include="update.c" />
+    <ClCompile Include="utf.c" />
+    <ClCompile Include="util.c" />
+    <ClCompile Include="vacuum.c" />
+    <ClCompile Include="vdbe.c" />
+    <ClCompile Include="vdbeapi.c" />
+    <ClCompile Include="vdbeaux.c" />
+    <ClCompile Include="vdbefifo.c" />
+    <ClCompile Include="vdbemem.c" />
+    <ClCompile Include="vtab.c" />
+    <ClCompile Include="where.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="btree.h" />
+    <ClInclude Include="fts1.h" />
+    <ClInclude Include="fts1_hash.h" />
+    <ClInclude Include="fts1_tokenizer.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="keywordhash.h" />
+    <ClInclude Include="opcodes.h" />
+    <ClInclude Include="os.h" />
+    <ClInclude Include="os_common.h" />
+    <ClInclude Include="pager.h" />
+    <ClInclude Include="parse.h" />
+    <ClInclude Include="sqlite3.h" />
+    <ClInclude Include="sqlite3ext.h" />
+    <ClInclude Include="sqliteInt.h" />
+    <ClInclude Include="vdbe.h" />
+    <ClInclude Include="vdbeInt.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BD7E9D10-81ED-461A-A7D8-73AD46E3AB02}</ProjectGuid>
+    <RootNamespace>SQLite_Static_Library</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>SQLiteStaticLibrary</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NO_TCL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;4244;4018;4311;4996;4312;4311;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <ModuleDefinitionFile />
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NO_TCL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4267;4244;4018;4311;4996;4312;4311;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <ModuleDefinitionFile />
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
