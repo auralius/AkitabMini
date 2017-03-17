@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <stdlib.h>
 
-#include "../wxlogo.xpm"
+//#include "bible-icon-16.xpm"
 
 class ThePanel;
 class TheFrame;

@@ -5,6 +5,7 @@
 bool BibleApp::OnInit()
 {
 	TheFrame *frame = new TheFrame(wxT("Alkitab Mini"));
+  
 	frame->Center();
 	frame->Show(true);
 
@@ -28,7 +29,6 @@ TheFrame::TheFrame(const wxChar *title)
     m_db.open("alkitab.db");
     
     BuildInterfaces();
-    Center();
 }
 
 TheFrame::~TheFrame()
@@ -145,7 +145,28 @@ void TheFrame::OnDecFontSizeButton(wxCommandEvent& event)
 
 void TheFrame::OnCountButton(wxCommandEvent& event)
 {
+    if (m_textToSearch->GetValue().Len() == 0)
+        return;
 
+    size_t count = 0;
+    size_t startindex = 0;
+    size_t lentext = m_textBible->GetValue().Len();
+    size_t lensearch = m_textToSearch->GetValue().Len();
+
+    while (startindex < lentext) {
+        size_t n = m_textBible->GetValue().Lower().find(m_textToSearch->GetValue().Lower(), startindex);
+
+        if (n > lentext)
+            break;
+
+        count = count + 1;
+        startindex = n + 1 + lensearch;
+    }
+
+    wxString msg, title;
+    msg.Printf(wxT("Found %i occurances."), count);
+    title.Printf(wxT("Searching: %s"), m_textToSearch->GetValue().c_str());
+    wxMessageBox(msg, title);
 }
 
 
